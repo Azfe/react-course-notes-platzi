@@ -1,5 +1,6 @@
 import './App.css'
 import Card from "./components/Card"
+import CardStyle from './components/Card/CardStyle';
 import Counter from "./components/Counter";
 import CounterWithEffect from './components/CounterWithEffect';
 import NameForm from './components/NameForm';
@@ -28,6 +29,9 @@ function App() {
       <h2>Formulario de nombre</h2>
       <NameForm />
       <CounterWithEffect />
+
+      <h2>Agregar estilos en React</h2>
+      <CardStyle />
 
     </>
   );
