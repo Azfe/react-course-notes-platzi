@@ -4,6 +4,7 @@ import CardStyle from './components/Card/CardStyle';
 import Counter from "./components/Counter";
 import CounterWithEffect from './components/CounterWithEffect';
 import NameForm from './components/NameForm';
+import SearchPosts from './components/SearchPosts/SearchPosts';
 import StaticComponent from './components/StaticComponent/StaticComponent';
 import ToggleButton from './components/ToggleButton';
 import UserList from './components/UserList/UserList';
@@ -41,6 +42,7 @@ function App() {
       <StaticComponent />
       <UserList />
       <UserListWithLoading />
+      <SearchPosts />
     </>
   );
 }
