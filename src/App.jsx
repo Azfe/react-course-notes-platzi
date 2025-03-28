@@ -11,6 +11,7 @@ import StaticComponent from './components/StaticComponent/StaticComponent';
 import ToggleButton from './components/ToggleButton';
 import UserList from './components/UserList/UserList';
 import UserListWithLoading from './components/UserListWithLoading/UserListWithLoading';
+import CounterWithCustomHook from './components/CounterWithCustomHook/CounterWithCustomHook';
 import './App.css'
 
 const ThemeContext = createContext();
@@ -94,6 +95,8 @@ function App() {
       <ThemeProvider>
         <ThemeButton />
       </ThemeProvider>
+
+      <CounterWithCustomHook />
     </>
   );
 }
