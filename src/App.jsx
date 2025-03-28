@@ -2,6 +2,7 @@ import './App.css'
 import Card from "./components/Card"
 import CardStyle from './components/Card/CardStyle';
 import Counter from "./components/Counter";
+import CounterReducer from './components/CounterReducer/CounterReducer';
 import CounterWithEffect from './components/CounterWithEffect';
 import NameForm from './components/NameForm';
 import SearchPosts from './components/SearchPosts/SearchPosts';
@@ -33,7 +34,7 @@ function App() {
       <h3>Formulario de nombre</h3>
       <NameForm />
       <CounterWithEffect />
-      <h3>Agregar estilos en React</h3>
+      <h2>Estilización de Componentes</h2>      
       <CardStyle />
 
       <hr />
@@ -43,6 +44,11 @@ function App() {
       <UserList />
       <UserListWithLoading />
       <SearchPosts />
+
+      <hr />
+
+        <h2>Componentes avanzados y Estado global</h2>
+      <CounterReducer />
     </>
   );
 }
