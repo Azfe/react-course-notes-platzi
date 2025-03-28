@@ -7,6 +7,7 @@ import NameForm from './components/NameForm';
 import StaticComponent from './components/StaticComponent/StaticComponent';
 import ToggleButton from './components/ToggleButton';
 import UserList from './components/UserList/UserList';
+import UserListWithLoading from './components/UserListWithLoading/UserListWithLoading';
 
 function App() {
   const items = ["React", "JavaScript", "Vite"];
@@ -39,6 +40,7 @@ function App() {
       <h2>Trabajo con Datos y APIs</h2>      
       <StaticComponent />
       <UserList />
+      <UserListWithLoading />
     </>
   );
 }
