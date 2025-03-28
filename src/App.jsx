@@ -1,4 +1,5 @@
-import './App.css'
+import { createContext, useEffect, useState, useContext } from 'react';
+
 import Card from "./components/Card"
 import CardStyle from './components/Card/CardStyle';
 import Counter from "./components/Counter";
@@ -10,6 +11,46 @@ import StaticComponent from './components/StaticComponent/StaticComponent';
 import ToggleButton from './components/ToggleButton';
 import UserList from './components/UserList/UserList';
 import UserListWithLoading from './components/UserListWithLoading/UserListWithLoading';
+import './App.css'
+
+const ThemeContext = createContext();
+
+const ThemeProvider = ({ children }) => {
+  const [theme, setTheme] = useState("light");
+
+  const toggleTheme = () => {
+    setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
+  };
+
+  return (
+    // El componente ThemeProvider es un contexto que permite compartir el tema de la aplicación entre los componentes hijos.
+    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+      {children}
+    </ThemeContext.Provider>
+  );
+};
+
+function ThemeButton() {
+  const { theme, toggleTheme } = useContext(ThemeContext);
+
+  return (
+    <button
+      onClick={toggleTheme}
+      style={{
+        backgroundColor: theme === 'light' ? "#fff" : "#333",
+        color: theme === 'light' ? "#333" : "#fff",
+        border: "none",
+        padding: "10px",
+        borderRadius: "5px",
+        cursor: "pointer",
+        margin: "10px 0",
+        transition: "background-color 0.3s, color 0.3s",
+      }}
+    >
+      Cambiar a {theme === "light" ? "dark" : "light"} mode
+    </button>
+  );
+}
 
 function App() {
   const items = ["React", "JavaScript", "Vite"];
@@ -34,12 +75,12 @@ function App() {
       <h3>Formulario de nombre</h3>
       <NameForm />
       <CounterWithEffect />
-      <h2>Estilización de Componentes</h2>      
+      <h2>Estilización de Componentes</h2>
       <CardStyle />
 
       <hr />
 
-      <h2>Trabajo con Datos y APIs</h2>      
+      <h2>Trabajo con Datos y APIs</h2>
       <StaticComponent />
       <UserList />
       <UserListWithLoading />
@@ -47,8 +88,12 @@ function App() {
 
       <hr />
 
-        <h2>Componentes avanzados y Estado global</h2>
-      <CounterReducer />
+      <h2>Componentes avanzados y Estado global</h2>
+      <CounterReducer />      
+      <h3>Uso de Context API</h3>
+      <ThemeProvider>
+        <ThemeButton />
+      </ThemeProvider>
     </>
   );
 }
