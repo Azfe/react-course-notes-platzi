@@ -4,7 +4,9 @@ import CardStyle from './components/Card/CardStyle';
 import Counter from "./components/Counter";
 import CounterWithEffect from './components/CounterWithEffect';
 import NameForm from './components/NameForm';
+import StaticComponent from './components/StaticComponent/StaticComponent';
 import ToggleButton from './components/ToggleButton';
+import UserList from './components/UserList/UserList';
 
 function App() {
   const items = ["React", "JavaScript", "Vite"];
@@ -23,16 +25,20 @@ function App() {
         }
       </ul>
 
-      <h2>Contador</h2>
+      <h3>Contador</h3>
       <Counter />
       <ToggleButton />
-      <h2>Formulario de nombre</h2>
+      <h3>Formulario de nombre</h3>
       <NameForm />
       <CounterWithEffect />
-
-      <h2>Agregar estilos en React</h2>
+      <h3>Agregar estilos en React</h3>
       <CardStyle />
 
+      <hr />
+
+      <h2>Trabajo con Datos y APIs</h2>      
+      <StaticComponent />
+      <UserList />
     </>
   );
 }
